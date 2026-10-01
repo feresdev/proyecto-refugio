@@ -26,4 +26,10 @@ app.use('*', cors({
 app.get('/health', (context) => context.json({ status: 'ok' }));
 app.route('/auth', createAuthRoutes(authController));
 app.route('/animals', createAnimalRoutes(animalController));
+// Vercel puede conservar el prefijo del rewrite; se soportan ambas formas.
+app.get('/api/health', (context) => context.json({ status: 'ok' }));
+app.route('/api/auth', createAuthRoutes(authController));
+app.route('/api/animals', createAnimalRoutes(animalController));
 app.onError(errorHandler);
+
+export default app;

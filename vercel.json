@@ -3,11 +3,14 @@
   "services": {
     "backend": {
       "root": "backend",
-      "framework": "hono"
+      "framework": "hono",
+      "entrypoint": "src/app.ts"
     },
     "frontend": {
       "root": "frontend",
-      "framework": "astro"
+      "framework": "astro",
+      "buildCommand": "npm run build",
+      "outputDirectory": "dist"
     }
   },
   "rewrites": [
