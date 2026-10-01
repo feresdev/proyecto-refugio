@@ -4,11 +4,13 @@
     "backend": {
       "root": "backend",
       "framework": "hono",
-      "entrypoint": "src/app.mts"
+      "entrypoint": "src/app.mts",
+      "installCommand": "npm ci"
     },
     "frontend": {
       "root": "frontend",
       "framework": "astro",
+      "installCommand": "npm ci",
       "buildCommand": "npm run build",
       "outputDirectory": "dist"
     }
