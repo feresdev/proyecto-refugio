@@ -12,5 +12,8 @@ export const environment = {
   jwtSecret: required('JWT_SECRET'),
   jwtExpiresIn: process.env.JWT_EXPIRES_IN ?? '1h',
   bcryptRounds: Number(process.env.BCRYPT_ROUNDS ?? 8),
-  frontendOrigin: process.env.FRONTEND_ORIGIN ?? 'http://localhost:4321',
+  frontendOrigins: required('FRONTEND_ORIGINS')
+    .split(',')
+    .map((origin) => origin.trim())
+    .filter(Boolean),
 };

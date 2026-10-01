@@ -19,7 +19,7 @@ const animalController = createAnimalController(new AnimalService(animalReposito
 
 export const app = new Hono();
 app.use('*', cors({
-  origin: environment.frontendOrigin,
+  origin: (origin) => environment.frontendOrigins.includes(origin) ? origin : undefined,
   allowHeaders: ['Content-Type', 'Authorization'],
   allowMethods: ['GET', 'POST', 'PUT', 'OPTIONS'],
 }));
