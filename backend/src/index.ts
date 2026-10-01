@@ -1,5 +1,5 @@
 import { serve } from '@hono/node-server';
-import { app } from './app.js';
+import { app } from './app.mjs';
 import { environment } from './config/environment.js';
 
 serve({ fetch: app.fetch, port: environment.port }, (info) => {

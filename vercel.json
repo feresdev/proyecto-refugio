@@ -4,7 +4,7 @@
     "backend": {
       "root": "backend",
       "framework": "hono",
-      "entrypoint": "src/app.ts"
+      "entrypoint": "src/app.mts"
     },
     "frontend": {
       "root": "frontend",
